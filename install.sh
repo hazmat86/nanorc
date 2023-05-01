@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/data/data/com.termux/files/usr/bin/sh
 
 # check for unzip before we continue
 if [ ! "$(command -v unzip)" ]; then
@@ -7,14 +7,14 @@ if [ ! "$(command -v unzip)" ]; then
 fi
 
 _fetch_sources(){
-  wget -O /tmp/nanorc.zip https://github.com/scopatz/nanorc/archive/master.zip
+  wget -O /data/data/com.termux/files/usr/tmp/nanorc.zip https://github.com/scopatz/nanorc/archive/master.zip
   mkdir -p ~/.nano/
 
   cd ~/.nano/ || exit
-  unzip -o "/tmp/nanorc.zip"
+  unzip -o "/data/data/com.termux/files/usr/tmp/nanorc.zip"
   mv nanorc-master/* ./
   rm -rf nanorc-master
-  rm /tmp/nanorc.zip
+  rm /data/data/com.termux/files/usr/tmp/nanorc.zip
 }
 
 _update_nanorc(){
@@ -29,7 +29,7 @@ _update_nanorc(){
 }
 
 _update_nanorc_lite(){
-  sed -i '/include "\/usr\/share\/nano\/\*\.nanorc"/i include "~\/.nano\/*.nanorc"' "${NANORC_FILE}"
+  sed -i '/include "\/data\/data\/com.termux\/files/\/usr\/share\/nano\/\*\.nanorc"/i include "~\/.nano\/*.nanorc"' "${NANORC_FILE}"
 }
 
 NANORC_FILE=~/.nanorc
