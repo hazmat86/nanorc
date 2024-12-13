@@ -1,5 +1,4 @@
 # Improved Nano Syntax Highlighting Files
-# This repo is the modified version that works for termux. This is a work by scopatz and only small modifications have been made by hazmat86. All credit goes to scopatz.
 
 This repository holds ``{lang}.nanorc`` files that have improved definitions of syntax highlighting for various languages.
 
